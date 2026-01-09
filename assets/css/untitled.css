@@ -108,6 +108,22 @@ footer p {
     margin-right: auto;
 }
 
+/* Garante que o ícone do menu (hamburger) seja sempre branco */
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.5) !important;
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3Base path fill='rgba(255, 255, 255, 0.8)' d='M4 7h22M4 15h22M4 23h22'/%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
+}
+
+/* Evita que o botão mude de cor e desapareça ao ser clicado */
+.navbar-toggler:focus, .navbar-toggler:active {
+    outline: none !important;
+    box-shadow: none !important;
+    background-color: rgba(255, 255, 255, 0.1) !important;
+}
+
 @media (min-width: 992px) {
     .cta .cta-inner {
         padding: 5rem;
