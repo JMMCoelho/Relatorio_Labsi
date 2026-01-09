@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Estacionamento Autónomo - Referências</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">       
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i">  
+        <link rel="stylesheet" href="assets/css/untitled.css">
+    <style>
+        body { background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('assets/img/bg.jpg'); background-attachment: fixed; background-size: cover; }
+        .bg-faded { background-color: rgba(255, 255, 255, 0.95); }
+        .ref-item { border-bottom: 1px solid #ddd; padding: 15px 0; }
+        .ref-item:last-child { border-bottom: none; }
+        .site-heading-upper { display: block; font-size: 2rem; font-weight: 800; text-transform: uppercase; }
+        .site-heading-lower { display: block; font-size: 5rem; font-weight: 100; text-transform: uppercase; }
+    </style>
+</head>
+<body>
+    <h1 class="text-center text-white d-none d-lg-block site-heading">
+        <span class="text-primary site-heading-upper mb-3"><strong>Documentação Técnica</strong></span>
+        <span class="text-white site-heading-lower">Referências</span>
+    </h1>
+
+    <nav class="navbar navbar-light navbar-expand-lg bg-dark py-lg-4" id="mainNav">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Introdução</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="estado_de_arte.html">Estado de Arte</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="arquitetura.html">Arquitetura</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="hardware.html">Hardware</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="software.html">Software</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="resultados.html">Resultados</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="conclusoes.html">Conclusões</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="referencias.html">Referências</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-section">
+        <div class="container">
+            <div class="bg-faded p-5 rounded">
+                <h2 class="section-heading mb-4">Fontes Consultadas e Manuais</h2>
+                
+                <div class="ref-item">
+                    <h5>Microchip - ATmega328P Datasheet</h5>
+                    <p class="small text-muted">Consulta principal para configuração dos Timers 0, 1 e 2, Interrupções PCINT e registos de Portos DDRB/C/D.</p>
+                    <a href="https://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-7810-Automotive-Microcontrollers-ATmega328P_Datasheet.pdf" target="_blank" class="btn btn-sm btn-outline-primary">Ver Online</a>
+                </div>
+
+                <div class="ref-item">
+                    <h5>STMicroelectronics - L298 Dual Full-Bridge Driver</h5>
+                    <p class="small text-muted">Datasheet utilizado para dimensionamento do driver de motores e configuração dos pinos de Enable para PWM.</p>
+                    <a href="https://www.st.com/resource/en/datasheet/l298.pdf" target="_blank" class="btn btn-sm btn-outline-primary">Ver Online</a>
+                </div>
+
+                <div class="ref-item">
+                    <h5>HC-SR04 Ultrasonic Sensor Manual</h5>
+                    <p class="small text-muted">Manual técnico para o cálculo do tempo de voo e implementação da fórmula de distância baseada na velocidade do som.</p>
+                    <a href="https://cdn.sparkfun.com/datasheets/Sensors/Proximity/HCSR04.pdf" target="_blank" class="btn btn-sm btn-outline-primary">Ver Online</a>
+                </div>
+
+                <div class="ref-item">
+                    <h5>KiCad Documentation</h5>
+                    <p class="small text-muted">Suporte para o desenvolvimento do esquema elétrico e layout de PCB multicamada.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-faded text-center py-5">
+        <div class="container">
+            <p class="m-0 small text-white">ISEP - Licenciatura em Engenharia Eletrotécnica e de Computadores - LABSI 2026</p>
+        </div>
+    </footer>
+
+    
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Estacionamento Autónomo - Arquitetura</title>
+       <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">       
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i">  
+        <link rel="stylesheet" href="assets/css/untitled.css">
+        <style>
+            body { background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('assets/img/bg.jpg'); background-attachment: fixed; background-size: cover; }
+            .site-heading-upper { display: block; font-size: 2rem; font-weight: 800; text-transform: uppercase; }
+            .site-heading-lower { display: block; font-size: 5rem; font-weight: 100; text-transform: uppercase; }
+            .nav-link { text-transform: uppercase; font-size: 0.9rem; font-weight: 700; }
+            .bg-faded { background-color: rgba(255, 255, 255, 0.9); }
+            footer { background-color: rgba(34, 34, 34, 0.9); }
+            .section-heading-upper { display: block; font-size: 1.5rem; font-weight: 700; color: #e6a756; }
+        </style>
+    </head>
+    <body>
+        <h1 class="text-center text-white d-none d-lg-block site-heading">
+            <span class="text-primary site-heading-upper mb-3"><strong>Relatório LABSI 2025/2026</strong></span>
+            <a href="index.html" style="text-decoration: none;">
+                <span class="text-white site-heading-lower">Arquitetura</span>
+            </a>
+        </h1>
+
+        <nav class="navbar navbar-light navbar-expand-lg bg-dark py-lg-4" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand text-uppercase d-lg-none text-expanded text-white" href="#">Menu</a>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="nav navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link text-white" href="index.html">Introdução</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="estado_de_arte.html">Estado de Arte</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="arquitetura.html">Arquitetura</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="hardware.html">Hardware</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="software.html">Software</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="resultados.html">Resultados</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="conclusoes.html">Conclusões</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="referencias.html">Referências</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="product-item">
+                    <div class="d-flex product-item-title">
+                        <div class="d-flex mr-auto bg-faded p-5 rounded">
+                            <h2 class="section-heading mb-0">
+                                <span class="section-heading-upper">Diagrama de blocos do sistema</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <img class="img-fluid d-flex mx-auto product-item-img mb-3 mb-lg-0 rounded shadow" src="img/diagrama_blocos.png" width="700">
+                    
+                    <div class="bg-faded p-5 rounded mt-3">
+                        <p class="mb-0 text-justify">
+                            Conforme ilustrado no diagrama de blocos, o núcleo central do protótipo é o microcontrolador 
+                            <a href="https://www.microchip.com/wwwproducts/en/ATmega328p" target="_blank"><em><span style="text-decoration: underline;">ATmega328</span></em></a>. 
+                            Este componente atua como o processador de decisões, recebendo dados periféricos e gerindo os atuadores para garantir a funcionalidade híbrida do veículo.<br><br>
+                            
+                            Como <strong><span style="text-decoration: underline;">entradas</span></strong> principais do sistema, destacam-se:<br>
+                            • <strong>Placa RF Original e Antena:</strong> Responsável pela recepção de comandos manuais. Os sinais de 9V provenientes desta placa são condicionados por divisores de tensão antes de serem lidos pelo ATmega.<br>
+                            • <strong>Sensores Ultrassónicos HC-SR04:</strong> Três unidades (Frente, Trás e Direita) que fornecem dados de proximidade essenciais para a percepção espacial durante o estacionamento autónomo.<br>
+                            • <strong>Botão Switch e Reset:</strong> Permitem o controlo de energia geral e a reinicialização dos registos do microcontrolador em caso de falha.<br>
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <div class="row text-center my-4">
+            <div class="col-md-6 offset-md-3">
+                <div class="bg-faded p-3 rounded shadow-sm">
+                    <img class="rounded img-fluid" src="img/atmega_pinout.png" width="300" title="Configuração de Pinos ATmega328P">
+                    <p class="small mt-2">Distribuição de I/O para sensores e controlo de motores.</p>
+                </div>
+            </div>
+        </div>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="bg-faded p-5 rounded">
+                    <p class="mb-0 text-justify">
+                        Como <strong><span style="text-decoration: underline;">saídas</span></strong> (Atuadores) do sistema, temos:<br>
+                        • <strong>Driver L298N:</strong> Interface de potência que controla dois motores DC independentes (Direção e Velocidade) através de sinais PWM.<br>
+                        • <strong>Buzzer Piezoelétrico:</strong> Fornece feedback acústico de frequência variável baseado nos dados de distância processados pelo Timer 0.<br>
+                        • <strong>Sistema de LEDs (x4):</strong> Um LED de 1Hz para batimento de sistema e três LEDs (Vermelho, Amarelo, Verde) para indicação visual do perímetro de segurança.<br>
+                    </p>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="bg-faded p-5 rounded">
+                    <h2 class="section-heading mb-4"><span class="section-heading-upper">Gestão de Energia</span></h2>
+                    <p class="mb-0 text-justify">
+                        A arquitetura de alimentação foi dividida para garantir isolamento galvânico entre lógica e potência:<br>
+                        • <strong>Lógica:</strong> Uma pilha de 9V alimenta o ATmega328 através de um regulador <strong>L7805</strong>, acompanhado de filtragem capacitiva (100uF e 220uF) para eliminar ruído.<br>
+                        • <strong>Potência:</strong> Pack de 6 pilhas AA (9V totais) dedicado exclusivamente ao driver <strong>L298N</strong> e à placa original do carro, prevenindo quedas de tensão no processador durante o pico de arranque dos motores.
+                    </p>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6 text-center">
+                        <img class="rounded img-fluid border bg-white p-2" src="img/l7805_reg.png" width="200" title="Regulador L7805">
+                        <p class="text-white small">Circuito de Regulação de 5V</p>
+                    </div>
+                    <div class="col-md-6 text-center">
+                        <img class="rounded img-fluid border bg-white p-2" src="img/l298n_driver.png" width="200" title="Driver L298N">
+                        <p class="text-white small">Módulo de Potência Motores</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer text-faded text-center py-5">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col text-left">
+                        <img class="img-fluid" src="assets/img/isep_logo.png" width="100">
+                    </div>
+                    <div class="col text-right">
+                        <img src="assets/img/dee.png" width="200">
+                    </div>
+                </div>
+                <p class="text-left m-0 small text-white">
+                    Copyright © 2025/2026<br>
+                    Jorge Coelho | João Lobo<br>
+                    ISEP - Engenharia Eletrotécnica e de Computadores
+                </p>
+            </div>
+        </footer>
+
+        
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/script.js"></script>
+    </body>
+</html>

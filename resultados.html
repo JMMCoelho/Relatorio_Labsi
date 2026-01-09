@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Estacionamento Autónomo - Resultados</title>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">       
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i">  
+        <link rel="stylesheet" href="assets/css/untitled.css">
+        <style>
+            body { background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('assets/img/bg.jpg'); background-attachment: fixed; background-size: cover; }
+            .site-heading-upper { display: block; font-size: 2rem; font-weight: 800; text-transform: uppercase; }
+            .site-heading-lower { display: block; font-size: 5rem; font-weight: 100; text-transform: uppercase; }
+            .nav-link { text-transform: uppercase; font-size: 0.9rem; font-weight: 700; }
+            .bg-faded { background-color: rgba(255, 255, 255, 0.95); }
+            footer { background-color: rgba(34, 34, 34, 0.9); }
+            .section-heading-lower { color: #0099ff; font-weight: 800; }
+        </style>
+    </head>
+    <body>
+        <h1 class="text-center text-white d-none d-lg-block site-heading">
+            <span class="text-primary site-heading-upper mb-3"><strong>Relatório LABSI 2025/2026</strong></span>
+            <a class="text-white" href="index.html">
+                <span class="text-white site-heading-lower">Resultados</span>
+            </a>
+        </h1>
+
+        <nav class="navbar navbar-light navbar-expand-lg bg-dark py-lg-4" id="mainNav">
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="nav navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link text-white" href="index.html">Introdução</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="estado_de_arte.html">Estado de Arte</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="arquitetura.html">Arquitetura</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="hardware.html">Hardware</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="software.html">Software</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="resultados.html">Resultados</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="conclusoes.html">Conclusões</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="referencias.html">Referências</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section class="page-section about-heading">
+            <div class="container">
+                <div class="about-heading-content">
+                    <div class="row">
+                        <div class="col-lg-10 col-xl-9 mx-auto">
+                            <div class="bg-faded rounded p-5">
+                                <h2 class="section-heading mb-4">Análise de Performance Operacional</h2>
+                                <p class="text-justify">
+                                    Concluiu-se que o protótipo atingiu um estado de operação totalmente funcional, cumprindo os objetivos de estacionamento autónomo paralelo e perpendicular. A integração entre o hardware (ATmega328) e o driver de potência L298N permitiu um controlo preciso da velocidade via PWM (17kHz), essencial para as manobras em baixa velocidade.
+                                    <br><br>
+                                    <b>Procedimento de Início:</b> Para operar o veículo, o utilizador deve acionar o Switch ON/OFF principal. No modo manual, o ATmega lê os sinais RF da antena através dos divisores de tensão. Ao detetar um obstáculo lateral próximo por 5 segundos, a FSM transita automaticamente para o modo de procura de estacionamento.
+                                    <br><br>
+                                    <b>Precisão Sensorial:</b> Os sensores HC-SR04 demonstraram uma precisão de ±1cm em condições ideais. Contudo, observaram-se ligeiras variações nas leituras devido ao ruído eletromagnético dos motores, que foi mitigado com a implementação de filtros capacitivos (100uF e 220uF) e isolamento galvânico das fontes de alimentação.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-6 text-center m-auto">
+                        <div class="bg-faded p-3 rounded shadow">
+                            <img class="rounded img-fluid" src="img/prototipo_final.jpg" width="450" title="Protótipo Operacional">
+                            <p class="mt-2 small"><i>Figura 1: Vista superior do protótipo com eletrónica integrada.</i></p>
+                        </div>
+                    </div>
+                    <div class="col-lg-6 text-center m-auto">
+                        <div class="bg-faded p-3 rounded shadow">
+                             <div class="embed-responsive embed-responsive-16by9 border rounded">
+                                <iframe class="embed-responsive-item" src="video/estacionamento_completo.mp4" allowfullscreen></iframe>
+                            </div>
+                            <p class="mt-2 small"><i>Vídeo 1: Demonstração da manobra autónoma de sucesso.</i></p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-5">
+                    <div class="col-lg-10 mx-auto text-center">
+                        <div class="bg-faded p-4 rounded">
+                            <h3 class="section-heading mb-4">Tabela de Testes e Resultados</h3>
+                            <div class="table-responsive">
+                                <table class="table table-sm table-bordered">
+                                    <thead class="bg-primary text-white">
+                                        <tr>
+                                            <th>Teste</th>
+                                            <th>Distância Real (cm)</th>
+                                            <th>Medição Sensor (cm)</th>
+                                            <th>Erro (%)</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr><td>Frente (Obstáculo)</td><td>10.0</td><td>10.2</td><td>2.0%</td></tr>
+                                        <tr><td>Traseira (Aproximação)</td><td>5.0</td><td>5.1</td><td>2.0%</td></tr>
+                                        <tr><td>Lateral (Medição de Lugar)</td><td>40.0</td><td>41.5</td><td>3.7%</td></tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                            <p class="small text-muted mt-2"><i>Tabela 1: Validação estatística dos sensores ultrassónicos.</i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer text-faded text-center py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-left">
+                        <img class="img-fluid" src="assets/img/isep_logo.png" width="100">
+                    </div>
+                    <div class="col text-right">
+                        <img src="assets/img/dee.png" width="200">
+                    </div>
+                </div>
+                <p class="text-left m-0 small text-white">
+                    Copyright © 2025/2026 | Jorge Coelho - 1230866 | João Lobo - 1231522<br>
+                    ISEP - Licenciatura em Engenharia Eletrotécnica e Computadores
+                </p>
+            </div>
+        </footer>
+
+        
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/script.js"></script>
+    </body>
+</html>

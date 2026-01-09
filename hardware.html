@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Estacionamento Autónomo - Hardware</title>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">       
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i">  
+        <link rel="stylesheet" href="assets/css/untitled.css">
+        <style>
+            body { background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('assets/img/bg.jpg'); background-attachment: fixed; background-size: cover; }
+            .site-heading-upper { display: block; font-size: 2rem; font-weight: 800; text-transform: uppercase; }
+            .site-heading-lower { display: block; font-size: 5rem; font-weight: 100; text-transform: uppercase; }
+            .nav-link { text-transform: uppercase; font-size: 0.9rem; font-weight: 700; }
+            .bg-faded { background-color: rgba(255, 255, 255, 0.9); }
+            footer { background-color: rgba(34, 34, 34, 0.9); }
+            .section-heading-lower { color: #0099ff; font-weight: 800; }
+        </style>
+    </head>
+    <body>
+        <h1 class="text-center text-white d-none d-lg-block site-heading">
+            <span class="text-primary site-heading-upper mb-3"><strong>Relatório LABSI 2025/2026</strong></span>
+            <a href="index.html" style="text-decoration: none;"><span class="text-white site-heading-lower">Hardware</span></a>
+        </h1>
+
+        <nav class="navbar navbar-light navbar-expand-lg bg-dark py-lg-4" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand text-uppercase d-lg-none text-expanded text-white" href="#">Menu</a>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="nav navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link text-white" href="index.html">Introdução</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="estado_de_arte.html">Estado de Arte</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="arquitetura.html">Arquitetura</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="hardware.html">Hardware</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="software.html">Software</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="resultados.html">Resultados</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="conclusoes.html">Conclusões</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="referencias.html">Referências</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="product-item">
+                    <div class="d-flex product-item-title">
+                        <div class="d-flex mr-auto bg-faded p-5 rounded">
+                            <h2 class="section-heading mb-0">
+                                <span class="section-heading-upper">Esquema Elétrico</span>
+                                <span class="section-heading-lower">KiCad</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <img class="img-fluid d-flex mx-auto product-item-img mb-3 mb-lg-0 rounded shadow" src="img/esquematico_final.png" width="800">
+                    <div class="bg-faded p-5 rounded mt-3">
+                        <p class="mb-0 text-justify">
+                            O esquema elétrico do protótipo foi integralmente desenvolvido no software <b>KiCad 9.0.6</b>. O design foi estruturado para garantir a integridade lógia e a potência necessária para a tração. 
+                            <br><br>
+                            O sistema divide-se em vários subcircuitos críticos:<br>
+                            • <b>Processamento Central:</b> Baseado no microcontrolador <b>ATmega328P-PU</b> a operar com um oscilador externo de 16MHz estabilizado por condensadores de 22pF.<br>
+                            • <b>Regulação de Tensão:</b> Utilização de um regulador <b>L7805</b> para converter os 9V da bateria de lítio para 5V estáveis, filtrados por condensadores de 100µF e 220µF.<br>
+                            • <b>Interface RF:</b> Implementação de 4 divisores de tensão resistivos para permitir a leitura segura dos sinais de 9V provenientes da antena original pelo microcontrolador.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="product-item">
+                    <div class="d-flex product-item-title">
+                        <div class="d-flex ml-auto bg-faded p-5 rounded">
+                            <h2 class="section-heading mb-0">
+                                <span class="section-heading-upper">Descrição</span>
+                                <span class="section-heading-lower">Componentes Ativos</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-md-4 text-center">
+                            <img class="rounded img-fluid border" src="img/atmega328.png" width="250" title="ATmega328P">
+                            <p class="text-white mt-2">ATmega328 (Microchip)</p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <img class="rounded img-fluid border" src="img/l298n_driver.png" width="250" title="Driver L298N">
+                            <p class="text-white mt-2">Driver Ponte-H L298N</p>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <img class="rounded img-fluid border" src="img/sensor_hc.png" width="250" title="Sensor HC-SR04">
+                            <p class="text-white mt-2">Sensor Ultrassónico HC-SR04</p>
+                        </div>
+                    </div>
+                    <div class="bg-faded p-5 rounded mt-3">
+                        <p class="mb-0 text-justify">
+                            • <b>Microcontrolador:</b> O ATmega328 foi selecionado pela sua capacidade de manipulação direta de registos (DDR, PORT, PIN), essencial para o controlo PWM de 17kHz e interrupções PCINT de alta frequência.<br>
+                            • <b>Atuadores:</b> O driver L298N controla dois motores DC originais do veículo. A alimentação provém de um pack independente de 6 pilhas AA para isolar o ruído elétrico da lógica de processamento.<br>
+                            • <b>Percepção:</b> Três sensores HC-SR04 monitorizam as distâncias dianteira, traseira e lateral, operando sob uma lógica de disparo sequencial gerida pelo Timer 0.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="product-item">
+                    <div class="d-flex product-item-title">
+                        <div class="d-flex ml-auto bg-faded p-5 rounded">
+                            <h2 class="section-heading mb-0">
+                                <span class="section-heading-upper">Visualização</span>
+                                <span class="section-heading-lower">Modelo 3D da PCB</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <img class="img-fluid d-flex mx-auto rounded shadow mt-3" src="img/pcb_3d.png" width="600">
+                    <div class="bg-faded p-5 rounded mt-3">
+                        <p class="mb-0 text-left">
+                            O design da PCB (Printed Circuit Board) foi otimizado para incluir planos de massa em ambas as camadas (Top/Bottom), melhorando a dissipação térmica e reduzindo a interferência eletromagnética (EMI). Este estudo 3D permitiu validar o posicionamento de conectores críticos como o do sensor lateral e os pinos de antena RF.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="bg-faded p-5 rounded">
+                    <h2 class="section-heading mb-4">
+                        <span class="section-heading-upper text-primary">Análise de Consumo</span>
+                    </h2>
+                    <div class="table-responsive">
+                        <table class="table table-bordered text-center">
+                            <thead class="thead-dark">
+                                <tr><th>Componente</th><th>Tensão (V)</th><th>Corrente Pico (mA)</th></tr>
+                            </thead>
+                            <tbody>
+                                <tr><td>ATmega328</td><td>5V</td><td>~20mA</td></tr>
+                                <tr><td>Motores (L298N)</td><td>9V</td><td>~2000mA</td></tr>
+                                <tr><td>HC-SR04 (x3)</td><td>5V</td><td>~45mA</td></tr>
+                                <tr><td>LEDs + Buzzer</td><td>5V</td><td>~50mA</td></tr>
+                                <tr class="font-weight-bold"><td>Total Estimado</td><td>-</td><td>~2115mA</td></tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <p class="mt-3">A escolha de uma bateria de lítio de 9V para a lógica e um pack AA de 6A garante uma autonomia de operação estável, mantendo margem para futuros periféricos.</p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer text-faded text-center py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-left">
+                        <img class="img-fluid" src="assets/img/isep_logo.png" width="100">
+                    </div>
+                    <div class="col text-right">
+                        <img src="assets/img/dee.png" width="200">
+                    </div>
+                </div>
+                <p class="text-left m-0 small text-white">
+                    Copyright © 2025/2026 | Jorge Coelho | João Lobo<br>
+                    ISEP - Engenharia Eletrotécnica e de Computadores
+                </p>
+            </div>
+        </footer>
+
+        
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/script.js"></script>
+    </body>
+</html>

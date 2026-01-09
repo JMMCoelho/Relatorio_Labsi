@@ -1,157 +1,127 @@
 <!DOCTYPE html>
 <html lang="pt">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relatório LABSI - Carro Autónomo</title>
-    <style>
-        body { font-family: Arial, sans-serif; line-height: 1.6; margin: 0; padding: 0; background-color: #f4f4f4; }
-        header { background: #0099ff; color: white; padding: 20px; text-align: center; }
-        nav { background: #333; color: white; padding: 10px; text-align: center; position: sticky; top: 0; z-index: 1000; }
-        nav a { color: white; margin: 0 15px; text-decoration: none; font-weight: bold; }
-        section { padding: 20px; max-width: 1000px; margin: 20px auto; background: white; border-radius: 8px; box-shadow: 0 0 10px rgba(0,0,0,0.1); }
-        h2 { border-bottom: 2px solid #0099ff; padding-bottom: 10px; color: #333; }
-        h3 { color: #0099ff; }
-        .img-container { text-align: center; margin: 25px 0; padding: 10px; background: #fafafa; border: 1px dashed #ccc; }
-        img { max-width: 100%; height: auto; border: 1px solid #ddd; border-radius: 4px; background: white; }
-        .video-container { text-align: center; margin: 25px 0; }
-        video { width: 100%; max-width: 720px; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.2); }
-        code { background: #f0f0f0; padding: 2px 5px; border-radius: 4px; font-family: monospace; }
-        pre { background: #2d2d2d; color: #ccc; padding: 15px; border-radius: 8px; overflow-x: auto; text-align: left; }
-        footer { text-align: center; padding: 20px; background: #333; color: white; margin-top: 40px; }
-    </style>
-</head>
-<body>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Estacionamento Autónomo - Introdução</title>      
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">      
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i">    
+        <link rel="stylesheet" href="assets/css/untitled.css">
+        
+        <style>
+            /* Podes manter este estilo aqui ou movê-lo para o ficheiro assets/css/untitled.css */
+            body { 
+                background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('assets/img/bg.jpg'); 
+                background-attachment: fixed; 
+                background-size: cover; 
+            }
+            .site-heading { text-transform: uppercase; line-height: 1; font-family: 'Raleway'; }
+            .site-heading-upper { display: block; font-size: 2rem; font-weight: 800; }
+            .site-heading-lower { display: block; font-size: 5rem; font-weight: 100; }
+            .nav-link { text-transform: uppercase; font-size: 0.9rem; font-weight: 700; letter-spacing: 0.1rem; }
+            .page-section { margin-top: 5rem; margin-bottom: 5rem; }
+            .bg-faded { background-color: rgba(255, 255, 255, 0.85); }
+            .cta-inner { position: relative; padding: 3rem; margin: 0.5rem; background-color: rgba(255, 255, 255, 0.85); }
+        </style>
+    </head>
+    <body>
+        <h1 class="text-center text-white d-none d-lg-block site-heading">
+            <span class="text-primary site-heading-upper mb-3"><strong>Relatório LABSI 2025/2026</strong></span>
+            <a class="text-white" href="index.html">
+                <span class="text-white site-heading-lower">ESTACIONAMENTO AUTÓNOMO</span>
+            </a>
+        </h1>
 
-<header>
-    <h1>Projeto de Estacionamento Autónomo</h1>
-    <p>LABSI 2025/2026 - Autores: Jorge Coelho (1230866) e João Lobo (1231522)</p>
-</header>
+        <nav class="navbar navbar-light navbar-expand-lg bg-dark py-lg-4" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand text-uppercase d-lg-none text-expanded text-white" href="#">Menu de Navegação</a>
+                <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="nav navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link text-white" href="index.html">Introdução</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="estado_de_arte.html">Estado de Arte</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="arquitetura.html">Arquitetura</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="hardware.html">Hardware</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="software.html">Software</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="resultados.html">Resultados</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="conclusoes.html">Conclusões</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="referencias.html">Referências</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
 
-<nav>
-    <a href="#introducao">Introdução</a>
-    <a href="#arquitetura">Arquitetura</a>
-    <a href="#hardware">Hardware</a>
-    <a href="#software">Software</a>
-    <a href="#resultados">Resultados</a>
-    <a href="#conclusao">Conclusão</a>
-</nav>
+        <section class="page-section clearfix">
+            <div class="container">
+                <div class="intro">
+                    <div class="intro-text p-5 rounded bg-faded text-center">
+                        <h2 class="section-heading mb-4"><span class="section-heading-upper">O Projeto</span></h2>
+                        <p class="text-left mb-3">
+                            Neste relatório é apresentado o projeto desenvolvido para a disciplina de Laboratório de Sistemas (LABSI). 
+                            O desafio consistiu na conversão de um veículo telecomandado (RC) comercial num protótipo robótico capaz de realizar manobras de <b>estacionamento autónomo</b>. <br><br>
+                            Através da integração de um microcontrolador ATmega328 e sensores ultrassónicos, o veículo consegue medir espaços, analisar a viabilidade da manobra e assumir o controlo da tração e direção de forma independente.
+                        </p>
+                    </div>
+                    <div class="text-center mt-4">
+                        <div class="embed-responsive embed-responsive-16by9 border rounded shadow">
+                            <iframe class="embed-responsive-item" src="video/video_estacionamento.mp4" allowfullscreen></iframe>
+                        </div>
+                        <p class="text-white"><i>Demonstração do ciclo de estacionamento paralelo e perpendicular.</i></p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section id="introducao">
-    <h2>Introdução</h2>
-    <p>O presente projeto descreve a conversão de um veículo telecomandado (RC) comercial num protótipo robótico capaz de realizar manobras de estacionamento autónomo. O objetivo central foi reaproveitar a estrutura mecânica e os motores originais do brinquedo, integrando uma nova unidade de processamento baseada no microcontrolador ATmega328P. O desafio técnico consistiu em permitir que o veículo mantivesse a sua funcionalidade original de rádio-controlo, ao mesmo tempo que executa manobras autónomas precisas guiadas por sensores ultrassónicos.</p>
-    
-    <div class="img-container">
-        <img src="img/carro_original.jpeg" alt="Carrinho RC Original">
-        <p><i>Figura 1: Veículo telecomandado original antes das modificações.</i></p>
-    </div>
-</section>
+        <section class="page-section cta">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-4 text-center">
+                        <img class="rounded-circle img-fluid mb-3" src="img/carro_original.jpg" width="200" alt="Carro Original">
+                        <img class="img-fluid border rounded-circle shadow" src="img/pcb_layout.jpeg" width="300" alt="Estudo PCB">
+                    </div>
+                    <div class="col-xl-8 mx-auto">
+                        <div class="cta-inner text-center rounded">
+                            <h2 class="section-heading mb-4">
+                                <span class="section-heading-upper">Objetivos Técnicos</span>
+                            </h2>
+                            <p class="text-left mb-0">
+                                O objetivo central foi o desenvolvimento de um sistema embebido robusto que gerisse a percepção e atuação do veículo. 
+                                <br><br>
+                                <b>Hardware:</b> Implementação de um sistema híbrido de alimentação (9V para lógica, 9V AA para potência), integração de drivers L298N e sensores HC-SR04, e o desenho de uma PCB profissional no KiCad.
+                                <br><br>
+                                <b>Software:</b> Programação em C (AVR) com manipulação direta de registos para Timers e Interrupções (PCINT), permitindo o controlo PWM preciso e a medição de distâncias com erro reduzido.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<section id="arquitetura">
-    <h2>Arquitetura do Sistema</h2>
-    <p>A arquitetura do sitema foi concebida de forma híbrida para garantir versatilidade. Foi preservada a placa eletrónica original do veículo para manter o sistema de antena e comunicação com o comando de rádio. Esta placa trabalha em paralelo com o novo hardware desenvolvido. O <b>fluxo de decisão</b> é gerido pelo ATmega328: quando o modo manual está ativo, o utilizador controla a direção e tração via rádio; quando o modo de estacionamento é acionado, o microcontrolador assume o controlo exclusivo, processando as leituras dos sensores ultrassónicos para calcular a trajetória e comandar o driver de motores <b>L298N</b>.</b></p>
-    
-    <div class="img-container">
-        <img src="img/fluxograma.png" alt="Fluxograma de Decisão">
-        <p><i>Figura 2: Diagrama de blocos do fluxo de decisão entre modo manual e autónomo.</i></p>
-    </div>
-</section>
+        <footer class="footer text-faded text-center py-5 bg-dark">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col text-left">
+                        <img class="img-fluid" src="assets/img/isep_logo.png" width="100" alt="ISEP">
+                    </div>
+                    <div class="col text-right">
+                        <img src="assets/img/dee.png" width="200" alt="DEE">
+                    </div>
+                </div>
+                <p class="text-left m-0 small text-white">
+                    Copyright © 2025/2026<br>
+                    Jorge Coelho - 1230866<br>
+                    João Lobo - 1231522<br>
+                    ISEP - Instituto Superior de Engenharia do Porto<br>
+                    Licenciatura em Engenharia Eletrotécnica e de Computadores
+                </p>
+            </div>
+        </footer>
 
-<section id="hardware">
-    <h2>Hardware e PCB</h2>
-    <p>A implementação física do hardware foi realizada utilizando uma breadboard fixada diretamente ao chassis do veículo comercial. Esta solução permitiu uma prototipagem rápida e a flexibilidade necessária para ajustar as ligações entre o ATmega328, o driver L298N e a placa original do carrinho durante os testes de estrada. Para elevar o projeto a um nível profissional, foi desenvolvido em paralelo o design de uma PCB (Printed Circuit Board) no software KiCad 9.0.6. O objetivo desta placa 3D é demonstrar como o circuito seria otimizado para produção, eliminando a ocupação excessiva de espaço e os riscos de mau contacto inerentes à breadboard.</p>
-
-    <div class="img-container">
-        <img src="img/carro_breadboard.jpg" alt="Protótipo em Breadboard">
-        <p><i>Figura 3: Fase de prototipagem com breadboard integrada no chassis.</i></p>
-    </div>
-
-    <h3>Design da PCB</h3>
-    <p>No estudo de design da PCB, aplicaram-se regras de eletrónica de potência, como o uso de <b>Net Classes de 0.8 mm</b> para as linhas de alta corrente e um <b>Plano de Massa (GND)</b> para a proteção contra ruído eletromagnético. Esta abordagem permite visualizar a transição do protótipo funcional para um produto final robusto e miniaturizado.</p>
-    
-    <div class="img-container">
-        <img src="img/pcb_layout.jpeg" alt="Layout da PCB no KiCad">
-        <p><i>Figura 4: Layout final das pistas (Camadas Superior e Inferior).</i></p>
-    </div>
-</section>
-
-<section id="software">
-    <h2>Software e Lógica de Controlo</h2>
-    <p>O software foi desenvolvido em C++ com uma estrutura de <b>Máquinas de Estados</b>. O algoritmo de estacionamento monitoriza constantemente a distância lateral, traseira e dianteira através de sensores ultrassónicos. O controlo dos motores é realizado via <b>PWM (Pulse Width Modulation)</b>, permitindo ajustes suaves na velocidade durante a manobra de aproximação. A lógica de software garante que o modo autónomo ignora os sinais do rádio-controlo durante a manobra, prevenindo conflitos de comandos.</p>
-    
-    <div class="img-container">
-        <img src="img/codigo_exemplo.jpeg" alt="Captura do Código Fonte">
-        <p><i>Figura 5: Implementação da Máquina de Estados Finita (FSM) e configuração inicial do sistema.</i></p>
-    </div>
-
-    <pre>
-case Manual:{
-				uint8_t portb_atual = PINB;
-				uint8_t portc_atual = PINC;
-				uint8_t portd_atual = PIND;
-				
-				if(portd_atual & (1 << PD3)){
-					velocidade_carro(940);
-					frente_ou_tras(1);
-				}else if(portc_atual & (1 << PC5)){
-					velocidade_carro(940);
-					frente_ou_tras(-1);
-				}else{
-					velocidade_carro(0);
-					frente_ou_tras(0);
-				}
-				
-				if(portb_atual & (1 << PB3)){
-					direita_ou_esquerda(-1);
-				}else if(portb_atual & (1 << PB5)){
-					direita_ou_esquerda(1);
-				}else{
-					direita_ou_esquerda(0);
-				}
-				
-				if(distancia[1] <= 5 && distancia[1] >= 1){
-					contador_5s_ativo = 1;
-					if(contador_5s >= 5000){
-						contador_5s_ativo = 0;
-						contador_5s = 1;
-						estado_atual_carro = Procurar_estacionamento;
-					}
-				}else{
-					contador_5s_ativo = 0;
-					contador_5s = 1;
-				}
-				
-				break;
-			}
-    </pre>
-</section>
-
-<section id="resultados">
-    <h2>Resultados</h2>
-    <p>Os testes práticos confirmam a eficácia do sistema híbrido desenvolvido. O veículo demonstrou uma transição estável entre o modo manual (comando de rádio original) e o modo autónomo. Através da monitorização por sensores ultrassónicos, o algoritmo foi capaz de identificar lugares de estacionamento e calcular a distância necessária para as manobras com uma margem de erro reduzida. A utilização do drivel L298N permitiu um controlo preciso da velocidade via PWM, garantindo que o carro não colidisse com obstáculos durante o processo. Embora o portótipo final utilize a montagem em breadboard para flexibilidade, a simulação e o design da PCB no KiCad validaram a viabilidade de uma futura miniaturização e industrialização do hardware.</p>
-    
-    <div class="img-container">
-        <img src="img/pcb_3d.png" alt="Vista 3D Final">
-        <p><i>Figura 6: Visualização 3D da placa eletrónica finalizada.</i></p>
-    </div>
-
-    <div class="video-container">
-        <video controls>
-            <source src="video/video_estacionamento.mp4" type="video/mp4">
-            O seu navegador não suporta vídeos.
-        </video>
-        <p><i>Vídeo 1: Demonstração do ciclo de estacionamento autónomo.</i></p>
-    </div>
-</section>
-
-<section id="conclusao">
-    <h2>Conclusão</h2>
-    <p>A realização deste projeto no âmbito de LABSI permitiu consolidar conhecimentos fundamentais em eletrónica, programção de microcontroladores e design de sistemas integrados. O maior desafio foi a adaptação de um <b>chassis comercial de lazer</b>, originalmente concebido para rádio-controlo, num sistema robótico inteligente. Esta integração exigiu uma compreensão profunda do fluxo de decisão entre a placa original do brinquedo e o novo sistema baseado no ATmega328. A conceção da placa 3D no KiCad, embora mantida como prova de conceito, foi essesncial para aplicar as regras de design profissional, como a gestão de ruído elétrico e o dimensionamento de pistas de potência. Em suma, o projeto atingiu os objetivos propostos, resultando num protótipo funcional que demonstra como a eletrónica personalizada pode expandir as capacidades de plataformas comerciais existentes.</p>
-</section>
-
-<footer>
-    <p>&copy; 2025 - ISEP / Engenharia Eletrotécnica e de Computadores</p>
-</footer>
-
-</body>
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/script.js"></script>
+    </body>
 </html>

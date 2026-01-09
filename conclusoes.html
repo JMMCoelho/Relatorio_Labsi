@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Estacionamento Autónomo - Conclusões</title>
+    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">       
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i">  
+        <link rel="stylesheet" href="assets/css/untitled.css">
+    <style>
+        body { background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('assets/img/bg.jpg'); background-attachment: fixed; background-size: cover; }
+        .site-heading-upper { display: block; font-size: 2rem; font-weight: 800; text-transform: uppercase; }
+        .site-heading-lower { display: block; font-size: 5rem; font-weight: 100; text-transform: uppercase; }
+        .nav-link { text-transform: uppercase; font-size: 0.9rem; font-weight: 700; }
+        .bg-faded { background-color: rgba(255, 255, 255, 0.95); }
+        footer { background-color: rgba(34, 34, 34, 0.9); }
+    </style>
+</head>
+<body>
+    <h1 class="text-center text-white d-none d-lg-block site-heading">
+        <span class="text-primary site-heading-upper mb-3"><strong>Relatório LABSI 2025/2026</strong></span>
+        <span class="text-white site-heading-lower">Conclusões</span>
+    </h1>
+
+    <nav class="navbar navbar-light navbar-expand-lg bg-dark py-lg-4" id="mainNav">
+        <div class="container">
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="nav navbar-nav mx-auto">
+                    <li class="nav-item"><a class="nav-link text-white" href="index.html">Introdução</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="estado_de_arte.html">Estado de Arte</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="arquitetura.html">Arquitetura</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="hardware.html">Hardware</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="software.html">Software</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="resultados.html">Resultados</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="conclusoes.html">Conclusões</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="referencias.html">Referências</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <section class="page-section">
+        <div class="container">
+            <div class="bg-faded p-5 rounded shadow">
+                <h2 class="section-heading mb-4 text-center">Balanço Final do Projeto</h2>
+                <p class="text-justify">
+                    O desenvolvimento deste sistema híbrido de estacionamento autónomo permitiu consolidar competências fundamentais em engenharia de sistemas embebidos, eletrónica de potência e controlo em tempo real. A transição bem-sucedida entre o modo manual (RF) e o autónomo (FSM) provou que é possível modernizar plataformas comerciais com hardware de baixo custo como o <b>ATmega328</b>.
+                    <br><br>
+                    <b>Desafios Superados:</b> Um dos maiores obstáculos foi a convivência entre a lógica de 5V e os sinais de 9V da antena original. A implementação de divisores de tensão resistivos foi a solução de engenharia adotada para proteger as portas do microcontrolador. Adicionalmente, a estabilização do sistema através de condensadores de desacoplamento (100uF e 220uF) foi crucial para eliminar os <i>resets</i> causados por ruído eletromagnético dos motores DC.
+                    <br><br>
+                    <b>Melhorias Futuras:</b> Para iterações posteriores, sugere-se a substituição do regulador linear L7805 por um conversor DC-DC <i>Buck</i> para aumentar a eficiência energética. A inclusão de um módulo Bluetooth permitiria também a telemetria em tempo real das distâncias medidas pelos sensores HC-SR04 diretamente para um terminal externo.
+                </p>
+                <div class="text-center mt-4">
+                    <img class="img-fluid rounded border shadow" src="img/conclusao_final.jpg" alt="Protótipo Finalizado" style="max-width: 600px; display: block; margin: 0 auto;">
+                    <p class="small text-muted mt-2">Protótipo finalizado e validado em ambiente de laboratório.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer text-faded text-center py-5">
+        <div class="container">
+            <p class="text-left m-0 small text-white">Copyright © 2025/2026 | Jorge Coelho | João Lobo | ISEP</p>
+        </div>
+    </footer>
+
+    
+    <script src="assets/js/jquery.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/script.js"></script>
+</body>
+</html>

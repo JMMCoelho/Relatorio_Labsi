@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Estacionamento Autónomo - Estado de Arte</title>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">       
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i">  
+        <link rel="stylesheet" href="assets/css/untitled.css">
+        <style>
+            body { background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('assets/img/bg.jpg'); background-attachment: fixed; background-size: cover; }
+            .site-heading-upper { display: block; font-size: 2rem; font-weight: 800; text-transform: uppercase; }
+            .site-heading-lower { display: block; font-size: 5rem; font-weight: 100; text-transform: uppercase; }
+            .nav-link { text-transform: uppercase; font-size: 0.9rem; font-weight: 700; }
+            .bg-faded { background-color: rgba(255, 255, 255, 0.9); }
+            footer { background-color: rgba(34, 34, 34, 0.9); }
+        </style>
+    </head>
+    <body>
+        <h1 class="text-center text-white d-none d-lg-block site-heading">
+            <span class="text-primary site-heading-upper mb-3"><strong>Relatório LABSI 2025/2026</strong></span>
+            <a class="text-white" href="index.html">
+                <span class="text-white site-heading-lower">Estado de Arte</span>
+            </a>
+        </h1>
+        
+        <nav class="navbar navbar-light navbar-expand-lg bg-dark py-lg-4" id="mainNav">
+            <div class="container">
+                <a class="navbar-brand text-uppercase d-lg-none text-expanded text-white" href="#">Menu</a>
+                <button data-toggle="collapse" data-target="#navbarResponsive" class="navbar-toggler" aria-controls="navbarResponsive">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="nav navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link text-white" href="index.html">Introdução</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="estado_de_arte.html">Estado de Arte</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="arquitetura.html">Arquitetura</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="hardware.html">Hardware</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="software.html">Software</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="resultados.html">Resultados</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="conclusoes.html">Conclusões</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="referencias.html">Referências</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section class="page-section about-heading">
+            <div class="container">
+                <div class="about-heading-content">
+                    <div class="row">
+                        <div class="col-lg-10 col-xl-9 mx-auto">
+                            <div class="text-left bg-faded rounded p-5">
+                                <h2 class="section-heading mb-4">Sensores Ultrassónicos na Indústria Automóvel</h2>
+                                <p>
+                                    A percepção ambiental é o pilar fundamental de qualquer sistema autónomo. Na indústria automóvel contemporânea, os sensores ultrassónicos são amplamente utilizados para sistemas de assistência ao estacionamento (PAS) devido à sua eficácia em curtas distâncias e baixo custo de implementação.
+                                </p>
+                                
+                                <div class="text-center my-4">
+                                    <img class="rounded img-fluid border" src="img/comparacao_sensores.png" width="400" title="Princípio de funcionamento do sensor ultrassónico">
+                                    <p class="small text-muted">Figura 1: Princípio de Time-of-Flight (ToF) utilizado nos sensores HC-SR04.</p>
+                                </div>
+
+                                <p>
+                                    Estudos recentes demonstram que a associação de sensores ultrassónicos com microcontroladores de 8 bits, como o <b>ATmega328</b>, permite a criação de sistemas de tempo-real eficientes para manobras de baixa velocidade. O processamento baseia-se na medição do tempo entre a emissão de um pulso de 40kHz e a recepção do seu eco, permitindo calcular a distância com precisão centimétrica.
+                                </p>
+
+                                <div class="text-center my-4">
+                                    <img class="rounded img-fluid border" src="img/funcionamento_ultrassom.png" width="450" title="Comparação de tecnologias de sensores">
+                                </div>
+
+                                <h2 class="section-heading mb-4">Sistemas Híbridos e Controlo Remoto</h2>
+                                <p>
+                                    Outra vertente explorada no estado da arte é a transição entre controlo humano e robótico. A utilização de interfaces de rádio-frequência (RF) originais, acopladas a sistemas de processamento paralelo, permite que o utilizador mantenha a segurança da condução manual enquanto o sistema autónomo executa tarefas repetitivas ou de elevada precisão, como o alinhamento em paralelo.
+                                </p>
+
+                                <div class="text-center my-4">
+                                    <img class="rounded img-fluid border" src="img/fluxograma.png" width="400" title="Lógica de estacionamento industrial">
+                                </div>
+
+                                <p>
+                                    A aplicação de algoritmos de <b>Máquina de Estados Finita (FSM)</b> é a norma para estas manobras, garantindo que o veículo apenas avança para a próxima fase da manobra (ex: viragem de direção) quando as condições de distância de segurança são validadas pelos sensores de perímetro.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container text-center">
+                <div class="bg-faded p-5 rounded">
+                    <h2 class="section-heading mb-4">Tecnologia em Ação</h2>
+                    <div class="embed-responsive embed-responsive-16by9 border rounded shadow">
+                        <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/gyovE7XQt-w" allowfullscreen></iframe>
+                    </div>
+                    <p class="text-white mt-2"><i>Demonstração do sistema de assistência ao estacionamento comercial (Park Assist).</i></p>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer text-faded text-center py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col text-left">
+                        <img class="img-fluid" src="assets/img/isep_logo.png" width="100">
+                    </div>
+                    <div class="col text-right">
+                        <img src="assets/img/dee.png" width="200">
+                    </div>
+                </div>
+                <p class="text-left m-0 small text-white">
+                    Copyright © 2025/2026<br>
+                    Jorge Coelho | João Lobo<br>
+                    ISEP - Instituto Superior de Engenharia do Porto
+                </p>
+            </div>
+        </footer>
+
+        
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/script.js"></script>
+    </body>
+</html>

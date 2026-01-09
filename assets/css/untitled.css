@@ -1,0 +1,25 @@
+/* Estilo Personalizado - Relatório LABSI */
+:root {
+    --primary: #004a99; /* Azul escuro */
+    --secondary: #6c757d; /* Cinza industrial */
+}
+
+body {
+    /* O fundo será a tua foto do projeto */
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/bg.jpg');
+    background-attachment: fixed;
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.bg-faded {
+    background-color: rgba(255, 255, 255, 0.95); /* Menos transparente que o original para ler melhor */
+    border-left: 10px solid var(--primary); /* Barra lateral para diferenciar do modelo */
+    padding: 3rem;
+}
+
+.section-heading-lower {
+    color: var(--primary);
+    font-weight: bold;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+}

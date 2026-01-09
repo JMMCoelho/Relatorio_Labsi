@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+        <title>Estacionamento Autónomo - Software</title>
+        <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">       
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Raleway:100,100i,200,200i,300,300i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i">  
+        <link rel="stylesheet" href="assets/css/untitled.css">
+        <style>
+            body { background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('assets/img/bg.jpg'); background-attachment: fixed; background-size: cover; }
+            .site-heading-upper { display: block; font-size: 2rem; font-weight: 800; text-transform: uppercase; }
+            .site-heading-lower { display: block; font-size: 5rem; font-weight: 100; text-transform: uppercase; }
+            .nav-link { text-transform: uppercase; font-size: 0.9rem; font-weight: 700; }
+            .bg-faded { background-color: rgba(255, 255, 255, 0.95); }
+            pre { background: #2d2d2d; color: #f8f8f2; padding: 15px; border-radius: 5px; overflow-x: auto; }
+            .keyword { color: #66d9ef; }
+            .comment { color: #75715e; }
+        </style>
+    </head>
+    <body>
+        <h1 class="text-center text-white d-none d-lg-block site-heading">
+            <span class="text-primary site-heading-upper mb-3"><strong>Relatório LABSI 2025/2026</strong></span>
+            <a class="text-white" href="index.html">
+                <span class="text-white site-heading-lower">Software</span>
+            </a>
+        </h1>
+
+        <nav class="navbar navbar-light navbar-expand-lg bg-dark py-lg-4" id="mainNav">
+            <div class="container">
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="nav navbar-nav mx-auto">
+                        <li class="nav-item"><a class="nav-link text-white" href="index.html">Introdução</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="estado_de_arte.html">Estado de Arte</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="arquitetura.html">Arquitetura</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="hardware.html">Hardware</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="software.html">Software</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="resultados.html">Resultados</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="conclusoes.html">Conclusões</a></li>
+                        <li class="nav-item"><a class="nav-link text-white" href="referencias.html">Referências</a></li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="product-item">
+                    <div class="d-flex product-item-title">
+                        <div class="d-flex mr-auto bg-faded p-5 rounded">
+                            <h2 class="section-heading mb-0">
+                                <span class="section-heading-lower">Lógica de Controlo (FSM)</span>
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="row mt-4">
+                        <div class="col-lg-12 text-center">
+                            <img class="img-fluid rounded shadow" src="img/fluxograma_fsm.png" alt="Fluxograma da Máquina de Estados">
+                            <p class="text-white mt-2"><i>Figura 1: Representação gráfica da Máquina de Estados Finita implementada.</i></p>
+                        </div>
+                    </div>
+                    <div class="bg-faded p-5 rounded mt-3">
+                        <p class="mb-0 text-justify">
+                            O software foi estruturado em torno de uma <b>Máquina de Estados Finita (FSM)</b> composta por 7 estados lógicos principais: <code>Manual</code>, <code>Procurar</code>, <code>Medir</code>, <code>Analisar</code>, <code>Estacionar (Paralelo/Perpendicular)</code> e <code>Estacionado</code>.
+                            <br><br>
+                            A transição entre o modo <b>Manual</b> e a autonomia ocorre quando o sensor lateral deteta um objeto a menos de 5cm durante 5 segundos consecutivos, ativando o contador de segurança <code>contador_5s</code>.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="bg-faded p-5 rounded">
+                    <h3>Gestão de Timers e Interrupções</h3>
+                    <p>O ATmega328 utiliza três timers independentes para gerir tarefas concorrentes:</p>
+                    <ul>
+                        <li><b>Timer 0 (CTC):</b> Configurado com prescaler de 64 para gerar interrupções a cada 1ms. Gere o LED de 1Hz, o buzzer e o disparo sequencial dos sensores (cada 15ms) para evitar interferências de eco.</li>
+                        <li><b>Timer 1 (Fast PWM):</b> Define a velocidade dos motores via pinos ENA/ENB. O registo <code>ICR1 = 940</code> gera uma frequência de ~17kHz, eliminando o ruído audível dos motores.</li>
+                        <li><b>Timer 2:</b> Utilizado como base temporal para medir a duração do pulso ECHO, com ticks de 64us (prescaler 1024).</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section class="page-section">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <div class="bg-faded p-5 rounded">
+                            <h2 class="section-heading mb-4">Cálculo de Distância por Interrupção (PCINT2)</h2>
+                            <p>A percepção espacial utiliza a interrupção <code>PCINT2_vect</code> para monitorizar os pinos PD0 a PD2. Ao detetar a subida do sinal ECHO, o timer é reiniciado; na descida, a distância é calculada:</p>
+                            <pre><code><span class="comment">// Cálculo da distância em centímetros</span>
+distancia[i] = ((uint32_t)TCNT2 * 64UL) / 58UL;</code></pre>
+                            <div class="text-center mt-3">
+                                <img class="img-fluid rounded" src="img/sensor_timing.png" width="400" alt="Timing Diagram Sensor">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer text-faded text-center py-5">
+            <div class="container">
+                <div class="row mb-4">
+                    <div class="col text-left">
+                        <img class="img-fluid" src="assets/img/isep_logo.png" width="100">
+                    </div>
+                    <div class="col text-right">
+                        <img src="assets/img/dee.png" width="200">
+                    </div>
+                </div>
+                <p class="text-left m-0 small text-white">
+                    Copyright © 2025/2026 | Jorge Coelho | João Lobo<br>
+                    ISEP - Licenciatura em Engenharia Eletrotécnica e Computadores
+                </p>
+            </div>
+        </footer>
+
+        
+        <script src="assets/js/jquery.min.js"></script>
+        <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+        <script src="assets/js/script.js"></script>
+    </body>
+</html>
