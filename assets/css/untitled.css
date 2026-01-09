@@ -1,25 +1,127 @@
-/* Estilo Personalizado - Relatório LABSI */
-:root {
-    --primary: #004a99; /* Azul escuro */
-    --secondary: #6c757d; /* Cinza industrial */
-}
-
+/* Configuração Geral do Body e Fundo */
 body {
-    /* O fundo será a tua foto do projeto */
-    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('../img/bg.jpg');
-    background-attachment: fixed;
-    background-size: cover;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('../img/bg.jpg') !important;
+    background-attachment: fixed !important;
+    background-size: cover !important;
+    font-family: 'Lora', serif;
 }
 
+/* Títulos Principais (Header) */
+.site-heading {
+    text-transform: uppercase;
+    line-height: 1;
+    font-family: 'Raleway';
+}
+
+.site-heading-upper {
+    display: block;
+    font-size: 2rem;
+    font-weight: 800;
+}
+
+.site-heading-lower {
+    display: block;
+    font-size: 5rem;
+    font-weight: 100;
+}
+
+/* Navegação */
+.nav-link {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
+}
+
+/* Boxes e Containers */
 .bg-faded {
-    background-color: rgba(255, 255, 255, 0.95); /* Menos transparente que o original para ler melhor */
-    border-left: 10px solid var(--primary); /* Barra lateral para diferenciar do modelo */
-    padding: 3rem;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 0.5rem;
 }
 
-.section-heading-lower {
-    color: var(--primary);
-    font-weight: bold;
-    text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+/* --- AJUSTES DE IMAGENS (O QUE PEDISTE) --- */
+
+/* 1. Imagens Redondas (Introdução) - Agora todas iguais e maiores */
+.rounded-circle {
+    width: 280px !important;
+    height: 280px !important;
+    object-fit: cover; /* Garante que a foto não estica */
+    border: 6px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+/* 2. Imagens de Produto (Arquitetura, Hardware, Software) */
+/* Isto faz com que as fotos grandes (KiCad, FSM, Diagramas) ocupem mais espaço */
+.product-item-img {
+    width: 100% !important;
+    max-width: 1100px !important; /* Aumentado para veres bem os detalhes técnicos */
+    height: auto !important;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
+}
+
+/* 3. Imagens dentro de colunas (Hardware - componentes ativos) */
+.col-md-4 img, .col-md-6 img {
+    width: 100% !important;
+    max-width: 400px !important; /* Aumentado o tamanho individual dos componentes */
+    height: auto;
+    margin-bottom: 1rem;
+}
+
+/* Ajustes do Footer */
+footer {
+    background-color: rgba(34, 34, 34, 0.95);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    margin-top: 5rem;
+}
+
+footer img {
+    max-height: 80px; /* Garante que os logos não fiquem gigantes */
+    width: auto;
+}
+
+/* Garante que o texto do copyright fique alinhado à esquerda como querias */
+footer p {
+    color: rgba(255, 255, 255, 0.7) !important;
+    line-height: 1.6;
+}
+
+/* Corrigir o fundo da secção de Objetivos Técnicos */
+.cta .cta-inner {
+    position: relative;
+    padding: 3rem;
+    margin: 0.5rem;
+    background-color: rgba(255, 255, 255, 0.9) !important; /* Fundo branco para ler bem */
+    border-radius: 0.5rem;
+}
+
+/* Corrigir a galeria de componentes em Hardware */
+.col-md-4 .rounded.img-fluid.border {
+    width: 100% !important;
+    height: 250px !important; /* Força todas a terem a mesma altura */
+    object-fit: contain !important; /* Garante que a imagem não estica, apenas se ajusta ao espaço */
+    background-color: white; /* Adiciona um fundo branco caso a imagem seja menor */
+    padding: 15px; /* Dá um respiro entre a imagem e a borda */
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (min-width: 992px) {
+    .cta .cta-inner {
+        padding: 5rem;
+        margin-left: 5rem; /* Margem para não colar nas fotos */
+    }
+}
+
+/* Ajuste para dispositivos móveis */
+@media (max-width: 768px) {
+    .site-heading-lower {
+        font-size: 3rem;
+    }
+    .rounded-circle {
+        width: 200px !important;
+        height: 200px !important;
+    }
 }
