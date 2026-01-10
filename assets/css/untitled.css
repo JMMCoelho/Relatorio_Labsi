@@ -1,4 +1,6 @@
-/* Configuração Geral do Body e Fundo */
+/* =========================================
+   1. CONFIGURAÇÕES GERAIS (FUNDO E TEXTO)
+   ========================================= */
 body {
     background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('../img/bg.jpg') !important;
     background-attachment: fixed !important;
@@ -6,7 +8,6 @@ body {
     font-family: 'Lora', serif;
 }
 
-/* Títulos Principais (Header) */
 .site-heading {
     text-transform: uppercase;
     line-height: 1;
@@ -25,117 +26,52 @@ body {
     font-weight: 100;
 }
 
-/* Navegação */
+/* =========================================
+   2. NAVEGAÇÃO E MENU MOBILE (HÉRCULES)
+   ========================================= */
 .nav-link {
     text-transform: uppercase;
     font-size: 0.9rem;
     font-weight: 700;
     letter-spacing: 0.1rem;
+    color: white !important; /* Força cor branca sempre */
 }
 
-/* Boxes e Containers */
-.bg-faded {
-    background-color: rgba(255, 255, 255, 0.9) !important;
-    border-radius: 0.5rem;
-}
-
-/* --- AJUSTES DE IMAGENS (O QUE PEDISTE) --- */
-
-/* 1. Imagens Redondas (Introdução) - Agora todas iguais e maiores */
-.rounded-circle {
-    width: 280px !important;
-    height: 280px !important;
-    object-fit: cover; /* Garante que a foto não estica */
-    border: 6px solid rgba(255, 255, 255, 0.5);
-    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
-}
-
-/* 2. Imagens de Produto (Arquitetura, Hardware, Software) */
-/* Isto faz com que as fotos grandes (KiCad, FSM, Diagramas) ocupem mais espaço */
-.product-item-img {
-    width: 100% !important;
-    max-width: 1100px !important; /* Aumentado para veres bem os detalhes técnicos */
-    height: auto !important;
-    margin-bottom: 2rem;
-    border-radius: 0.5rem;
-}
-
-/* 3. Imagens dentro de colunas (Hardware - componentes ativos) */
-.col-md-4 img, .col-md-6 img {
-    width: 100% !important;
-    max-width: 400px !important; /* Aumentado o tamanho individual dos componentes */
-    height: auto;
-    margin-bottom: 1rem;
-}
-
-/* Ajustes do Footer */
-footer {
-    background-color: rgba(34, 34, 34, 0.95);
-    padding-top: 3rem;
-    padding-bottom: 3rem;
-    margin-top: 5rem;
-}
-
-footer img {
-    max-height: 80px; /* Garante que os logos não fiquem gigantes */
-    width: auto;
-}
-
-/* Garante que o texto do copyright fique alinhado à esquerda como querias */
-footer p {
-    color: rgba(255, 255, 255, 0.7) !important;
-    line-height: 1.6;
-}
-
-/* Corrigir o fundo da secção de Objetivos Técnicos */
-.cta .cta-inner {
-    position: relative;
-    padding: 3rem;
-    margin: 0.5rem;
-    background-color: rgba(255, 255, 255, 0.9) !important; /* Fundo branco para ler bem */
-    border-radius: 0.5rem;
-}
-
-/* Corrigir a galeria de componentes em Hardware */
-.col-md-4 .rounded.img-fluid.border {
-    width: 100% !important;
-    height: 250px !important; /* Força todas a terem a mesma altura */
-    object-fit: contain !important; /* Garante que a imagem não estica, apenas se ajusta ao espaço */
-    background-color: white; /* Adiciona um fundo branco caso a imagem seja menor */
-    padding: 15px; /* Dá um respiro entre a imagem e a borda */
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-/* Garante que o ícone do menu (hamburger) seja sempre branco */
-.navbar-toggler {
-    border-color: rgba(255, 255, 255, 0.5) !important;
-}
-
-.navbar-toggler-icon {
-    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3Base path fill='rgba(255, 255, 255, 0.8)' d='M4 7h22M4 15h22M4 23h22'/%3E%3Cpath stroke='rgba(255, 255, 255, 0.8)' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E") !important;
-}
-
-/* Evita que o botão mude de cor e desapareça ao ser clicado */
-.navbar-toggler:focus, .navbar-toggler:active {
-    outline: none !important;
+/* Remove o verde e fundos estranhos ao clicar */
+.navbar-nav .nav-link:focus, 
+.navbar-nav .nav-link:active,
+.navbar-nav .nav-link:hover {
+    color: white !important;
+    background: none !important;
     box-shadow: none !important;
-    background-color: rgba(255, 255, 255, 0.1) !important;
+    outline: none !important;
 }
 
-/* 1. Desenhar os 3 traços brancos de forma infalível */
+.navbar-nav .nav-link.active {
+    color: #e6a756 !important; /* Destaque dourado para página ativa */
+}
+
+/* BOTÃO HAMBURGER (O QUADRADO) */
+.navbar-toggler {
+    border: 1px solid rgba(255, 255, 255, 0.5) !important;
+    padding: 0.6rem !important;
+    background: transparent !important;
+    display: flex !important;
+    align-items: center;
+    justify-content: center;
+}
+
+/* OS 3 TRAÇOS (DESENHO MANUAL) */
 .navbar-toggler-icon {
-    background-image: none !important;
-    background-color: white !important; /* Esta é a barra do meio */
+    background-image: none !important; /* Remove qualquer imagem quebrada */
+    background-color: white !important; /* Barra do meio */
     height: 2px !important;
     width: 25px !important;
     display: block !important;
     position: relative !important;
-    transition: all 0.2s;
 }
 
-/* Criar a barra de cima e a de baixo usando sombras e pseudo-elementos */
+/* Barra de cima e de baixo */
 .navbar-toggler-icon::before,
 .navbar-toggler-icon::after {
     content: '' !important;
@@ -146,53 +82,83 @@ footer p {
     left: 0 !important;
 }
 
-.navbar-toggler-icon::before {
-    top: -8px !important; /* Distância da barra de cima */
+.navbar-toggler-icon::before { top: -8px !important; }
+.navbar-toggler-icon::after { top: 8px !important; }
+
+/* =========================================
+   3. BOXES, IMAGENS E LAYOUT
+   ========================================= */
+.bg-faded {
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 0.5rem;
 }
 
-.navbar-toggler-icon::after {
-    top: 8px !important; /* Distância da barra de baixo */
+/* Fundo dos Objetivos Técnicos */
+.cta .cta-inner {
+    position: relative;
+    padding: 3rem;
+    background-color: rgba(255, 255, 255, 0.9) !important;
+    border-radius: 0.5rem;
 }
 
-/* 2. Remover o quadrado preto e garantir visibilidade */
-.navbar-toggler {
-    border: 1px solid rgba(255, 255, 255, 0.5) !important;
-    padding: 0.5rem !important;
-    display: flex !important;
-    align-items: center !important;
-    justify-content: center !important;
-    background: transparent !important;
+/* Imagens Redondas (Introdução) */
+.rounded-circle {
+    width: 280px !important;
+    height: 280px !important;
+    object-fit: cover;
+    border: 6px solid rgba(255, 255, 255, 0.5);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-/* 3. Corrigir a cor verde dos links ao clicar (para ficarem sempre brancos) */
-.navbar-nav .nav-link, 
-.navbar-nav .nav-link:focus, 
-.navbar-nav .nav-link:active,
-.navbar-nav .nav-link:hover {
-    color: white !important;
-    background: none !important;
-    box-shadow: none !important;
+/* Imagens Grandes (Diagramas/KiCad) */
+.product-item-img {
+    width: 100% !important;
+    max-width: 1100px !important;
+    height: auto !important;
+    margin-bottom: 2rem;
+    border-radius: 0.5rem;
 }
 
-/* Opcional: Se quiseres que a página atual tenha um leve destaque em dourado (como o ISEP) */
-.navbar-nav .nav-link.active {
-    color: #e6a756 !important; 
+/* Galeria de Componentes (Hardware) - Altura Igual */
+.col-md-4 .rounded.img-fluid.border {
+    width: 100% !important;
+    height: 250px !important;
+    object-fit: contain !important;
+    background-color: white;
+    padding: 15px;
+    display: block;
+    margin: 0 auto;
+}
+
+/* =========================================
+   4. RODAPÉ (FOOTER)
+   ========================================= */
+footer {
+    background-color: rgba(34, 34, 34, 0.95);
+    padding: 3rem 0;
+    margin-top: 5rem;
+}
+
+footer img {
+    max-height: 80px;
+    width: auto;
+}
+
+footer p {
+    color: rgba(255, 255, 255, 0.7) !important;
+    line-height: 1.6;
+}
+
+/* =========================================
+   5. RESPONSIVIDADE (TELEMÓVEIS)
+   ========================================= */
+@media (max-width: 768px) {
+    .site-heading-lower { font-size: 3rem; }
+    .rounded-circle { width: 200px !important; height: 200px !important; }
+    .cta .cta-inner { padding: 2rem; }
+    .navbar-collapse { background: rgba(0,0,0,0.9); padding: 1rem; border-radius: 0.5rem; }
 }
 
 @media (min-width: 992px) {
-    .cta .cta-inner {
-        padding: 5rem;
-        margin-left: 5rem; /* Margem para não colar nas fotos */
-    }
-}
-
-/* Ajuste para dispositivos móveis */
-@media (max-width: 768px) {
-    .site-heading-lower {
-        font-size: 3rem;
-    }
-    .rounded-circle {
-        width: 200px !important;
-        height: 200px !important;
-    }
+    .cta .cta-inner { padding: 5rem; margin-left: 5rem; }
 }
