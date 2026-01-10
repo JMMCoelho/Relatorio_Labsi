@@ -1,6 +1,6 @@
-/* =========================================
-   1. CONFIGURAÇÕES GERAIS (FUNDO E TEXTO)
-   ========================================= */
+/* ============================================================
+   1. FUNDO E CONFIGURAÇÕES GERAIS
+   ============================================================ */
 body {
     background: linear-gradient(rgba(47, 23, 15, 0.65), rgba(47, 23, 15, 0.65)), url('../img/bg.jpg') !important;
     background-attachment: fixed !important;
@@ -26,44 +26,44 @@ body {
     font-weight: 100;
 }
 
-/* =========================================
-   2. NAVEGAÇÃO E MENU MOBILE (HÉRCULES)
-   ========================================= */
+/* ============================================================
+   2. NAVEGAÇÃO E MENU (PC E TELEMÓVEL)
+   ============================================================ */
 
-/* Limpeza de cores para o título "Menu" no mobile e links */
-.navbar-brand, 
-.navbar-toggler,
+/* Estilo Base dos Links */
 .nav-link {
+    text-transform: uppercase;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.1rem;
     color: white !important;
-    text-decoration: none !important;
 }
 
-/* FORÇA BRUTA: Remove o verde de TODO o menu em qualquer estado */
-.navbar-nav .nav-link,
+/* Forçar Cor Branca e remover o VERDE em qualquer estado */
 .navbar-nav .nav-link:focus, 
 .navbar-nav .nav-link:active,
 .navbar-nav .nav-link:hover,
+.navbar-brand,
 .navbar-brand:focus,
 .navbar-brand:hover {
-    color: white !important; /* Cor do texto sempre branca */
-    background: none !important; /* Remove fundos estranhos */
+    color: white !important;
+    background: none !important;
     box-shadow: none !important;
     outline: none !important;
+    text-decoration: none !important;
 }
 
-/* Cor da página onde o utilizador está (Dourado ISEP) */
+/* Destaque para a página ativa */
 .navbar-nav .nav-link.active {
     color: #e6a756 !important; 
 }
 
-/* BOTÃO HAMBURGER (O QUADRADO) */
+/* BOTÃO HAMBURGER (O QUADRADO) - ESCONDIDO NO PC */
 .navbar-toggler {
+    display: none !important; 
     border: 1px solid rgba(255, 255, 255, 0.5) !important;
     padding: 0.6rem !important;
     background: transparent !important;
-    display: flex !important;
-    align-items: center;
-    justify-content: center;
 }
 
 /* OS 3 TRAÇOS (DESENHO MANUAL) */
@@ -85,19 +85,19 @@ body {
     position: absolute !important;
     left: 0 !important;
 }
-
 .navbar-toggler-icon::before { top: -8px !important; }
 .navbar-toggler-icon::after { top: 8px !important; }
 
-/* =========================================
-   3. BOXES, IMAGENS E LAYOUT
-   ========================================= */
+/* ============================================================
+   3. LAYOUT, BOXES E IMAGENS
+   ============================================================ */
+
 .bg-faded {
     background-color: rgba(255, 255, 255, 0.9) !important;
     border-radius: 0.5rem;
 }
 
-/* Fundo dos Objetivos Técnicos */
+/* Fundo dos Objetivos Técnicos (Introdução) */
 .cta .cta-inner {
     position: relative;
     padding: 3rem;
@@ -114,8 +114,8 @@ body {
     box-shadow: 0 4px 15px rgba(0,0,0,0.3);
 }
 
-/* Imagens Grandes (Diagramas/KiCad) */
-.product-item-img {
+/* Imagens Técnicas Grandes (Diagramas, KiCad, FSM) */
+.product-item-img, .img-fluid.rounded.shadow {
     width: 100% !important;
     max-width: 1100px !important;
     height: auto !important;
@@ -134,9 +134,9 @@ body {
     margin: 0 auto;
 }
 
-/* =========================================
+/* ============================================================
    4. RODAPÉ (FOOTER)
-   ========================================= */
+   ============================================================ */
 footer {
     background-color: rgba(34, 34, 34, 0.95);
     padding: 3rem 0;
@@ -153,16 +153,37 @@ footer p {
     line-height: 1.6;
 }
 
-/* =========================================
-   5. RESPONSIVIDADE (TELEMÓVEIS)
-   ========================================= */
-@media (max-width: 768px) {
+/* ============================================================
+   5. RESPONSIVIDADE (MEDIA QUERIES)
+   ============================================================ */
+
+/* TELEMÓVEIS E TABLETS (Abaixo de 991px) */
+@media (max-width: 991px) {
+    .navbar-toggler {
+        display: flex !important; /* Mostra o botão apenas aqui */
+        align-items: center;
+        justify-content: center;
+    }
+
+    .navbar-collapse {
+        background: rgba(33, 37, 41, 0.98) !important;
+        padding: 1rem;
+        border-radius: 0.5rem;
+        margin-top: 10px;
+    }
+
     .site-heading-lower { font-size: 3rem; }
-    .rounded-circle { width: 200px !important; height: 200px !important; }
-    .cta .cta-inner { padding: 2rem; }
-    .navbar-collapse { background: rgba(0,0,0,0.9); padding: 1rem; border-radius: 0.5rem; }
+    
+    .rounded-circle {
+        width: 200px !important;
+        height: 200px !important;
+    }
 }
 
+/* COMPUTADORES GRANDES */
 @media (min-width: 992px) {
-    .cta .cta-inner { padding: 5rem; margin-left: 5rem; }
+    .cta .cta-inner {
+        padding: 5rem;
+        margin-left: 5rem;
+    }
 }
